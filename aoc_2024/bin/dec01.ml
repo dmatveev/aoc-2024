@@ -18,13 +18,10 @@ let load_lists fname =
   let work() = load_lists_u ic in
   Fun.protect ~finally work
 
-let rec dist_sum g1 g2 =
-  let error_diff () = raise (Failure "Lists of different lengths") in
-  match (g2, g1) with
-  | [], [] -> 0
-  | (h1 :: gg1), (h2 :: gg2) -> abs(h1 - h2) + dist_sum gg1 gg2
-  | [], _ -> error_diff ()
-  | _, [] -> error_diff ()
+let dist_sum g1 g2 =
+  List.combine g1 g2
+  |> List.map (fun (a, b) -> abs(a - b))
+  |> List.fold_left (+) 0
 
 let () =
   match (load_lists "data/dec01.txt") with (group1, group2) ->
