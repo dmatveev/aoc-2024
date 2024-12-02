@@ -1,16 +1,14 @@
 let load_lists_u chan =
-  let group1 = ref [] in
-  let group2 = ref [] in
+  let groups = ref ([],[]) in
   let continue = ref true in
   while !continue do
     match input_line chan with
     | x -> Scanf.sscanf x "%d %d" (fun a b ->
-               group1 := a :: !group1;
-               group2 := b :: !group2);
+               match !groups with (aa, bb) -> groups := (a::aa, b::bb));
     | exception End_of_file ->
        continue := false
   done;
-  !group1, !group2
+  !groups
 
 let load_lists fname =
   let ic = open_in fname in
