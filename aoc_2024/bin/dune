@@ -15,3 +15,9 @@
  (name dec03)
  (modules dec03)
  (libraries aoc_2024))
+
+(executable
+ (public_name dec04)
+ (name dec04)
+ (modules dec04)
+ (libraries aoc_2024))
