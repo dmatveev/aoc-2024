@@ -1,6 +1,5 @@
 let count_xmas mat =
-  let rows = Array.length mat in
-  let cols = Array.length mat.(0) in
+  let (rows, cols) = Common.size_of_mat mat in
   let count = ref 0 in
 
   let within r c = r >= 0 && r < rows && c >= 0 && c < cols in

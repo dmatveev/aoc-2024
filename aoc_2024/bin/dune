@@ -1,29 +1,17 @@
 (executable
- (public_name dec01)
- (name dec01)
- (modules dec01)
- (libraries aoc_2024))
+ (public_name dec01) (name dec01) (modules dec01) (libraries aoc_2024))
 
 (executable
- (public_name dec02)
- (name dec02)
- (modules dec02)
- (libraries aoc_2024))
+ (public_name dec02) (name dec02) (modules dec02) (libraries aoc_2024))
 
 (executable
- (public_name dec03)
- (name dec03)
- (modules dec03)
- (libraries aoc_2024))
+ (public_name dec03) (name dec03) (modules dec03) (libraries aoc_2024))
 
 (executable
- (public_name dec04)
- (name dec04)
- (modules dec04)
- (libraries aoc_2024))
+ (public_name dec04) (name dec04) (modules dec04) (libraries aoc_2024))
 
 (executable
- (public_name dec05)
- (name dec05)
- (modules dec05)
- (libraries aoc_2024))
+ (public_name dec05) (name dec05) (modules dec05) (libraries aoc_2024))
+
+(executable
+ (public_name dec06) (name dec06) (modules dec06) (libraries aoc_2024))
