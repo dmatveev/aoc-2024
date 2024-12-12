@@ -3,9 +3,9 @@ let stones s = String.split_on_char ' ' s |> List.map int_of_string
 let even_sized x = (Aoc_2024.Common.num_digits x) mod 2 = 0
 
 let even_split x =
-  let s = string_of_int x in
-  let h = (String.length s) / 2 in
-  int_of_string (String.sub s 0 h), int_of_string (String.sub s h h)
+  let rec impl m = function | i when i <= 0 -> (x / m), (x mod m)
+                            | i -> impl (m * 10) (i - 2) in
+  impl 1 (Aoc_2024.Common.num_digits x)
 
 let blink xs n h =
   let rec gen s i =
