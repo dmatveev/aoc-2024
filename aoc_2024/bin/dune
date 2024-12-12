@@ -21,3 +21,6 @@
 
 (executable
  (public_name dec08) (name dec08) (modules dec08) (libraries aoc_2024))
+
+(executable
+ (public_name dec09) (name dec09) (modules dec09) (libraries aoc_2024))
