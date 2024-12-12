@@ -29,3 +29,9 @@ let iter_2d f m =
   ()
 
 let iter_2d_f f m = iter_2d (fun r c -> f r c m.(r).(c)) m
+
+let rec num_digits = function
+  | 0 -> 1
+  | n when n < 0 -> num_digits (-1 * n)
+  | n when n < 10 -> 1
+  | n -> 1 + num_digits (n / 10)

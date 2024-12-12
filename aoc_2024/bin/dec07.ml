@@ -11,15 +11,9 @@ let eq_of_string str =
     | x -> x :: load_list() in
   { test_value = tv; operands = load_list () }
 
-let rec num_digits = function
-  | 0 -> 1
-  | n when n < 0 -> num_digits (-1 * n)
-  | n when n < 10 -> 1
-  | n -> 1 + num_digits (n / 10)
-
 let ccat a b =
   let rec impl a n = if n = 0 then a + b else impl (a * 10) (n - 1) in
-  impl a (num_digits b)
+  impl a (Aoc_2024.Common.num_digits b)
 let (++) = ccat
 
 let test_eq eq =
