@@ -37,10 +37,8 @@ let () =
       try Scanf.bscanf ic "\n" true with _ -> false in
     let rec impl () = let r = get () in r::(if adv () then impl () else []) in
     impl () in
+  let rs = Aoc_2024.Common.scan_file "data/dec13.txt" load in
 
-  let ic = Scanf.Scanning.open_in "data/dec13.txt" in
-  let finally () = Scanf.Scanning.close_in ic in
-  let rs = Fun.protect ~finally (fun () -> load ic) in
   let upd r = function | Some c -> r := !r + c
                        | _ -> () in
   let total = ref 0 in

@@ -10,4 +10,8 @@ val iter_2d: (int -> int -> unit) -> char array array -> unit
 
 val iter_2d_f: (int -> int -> char -> unit) -> char array array -> unit
 
+val loop_2d: (int -> int -> unit) -> int * int -> unit
+
 val num_digits: int -> int
+
+val scan_file : 'a. string -> (Scanf.Scanning.in_channel -> 'a) -> 'a

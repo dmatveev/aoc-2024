@@ -30,8 +30,18 @@ let iter_2d f m =
 
 let iter_2d_f f m = iter_2d (fun r c -> f r c m.(r).(c)) m
 
+let loop_2d f (r_max, c_max) =
+  for r = 0 to r_max - 1 do
+    for c = 0 to c_max - 1 do f r c done
+  done
+
 let rec num_digits = function
   | 0 -> 1
   | n when n < 0 -> num_digits (-1 * n)
   | n when n < 10 -> 1
   | n -> 1 + num_digits (n / 10)
+
+let scan_file : 'a. string -> (Scanf.Scanning.in_channel -> 'a) -> 'a = fun path f ->
+  let ic = Scanf.Scanning.open_in path in
+  let finally () = Scanf.Scanning.close_in ic in
+  Fun.protect ~finally (fun () -> f ic)

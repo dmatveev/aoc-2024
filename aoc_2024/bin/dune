@@ -36,3 +36,6 @@
 
 (executable
  (public_name dec13) (name dec13) (modules dec13) (libraries aoc_2024))
+
+(executable
+ (public_name dec14) (name dec14) (modules dec14) (libraries aoc_2024))
