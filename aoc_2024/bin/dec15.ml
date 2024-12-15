@@ -19,7 +19,7 @@ let load ic =
 let () =
   let (map, moves) = In_channel.with_open_text "data/dec15.txt" load in
   let now_at = ref {x = 0; y = 0} in
-  Aoc_2024.Common.iter_2d_f (fun r c x -> if x = '@' then now_at := {x = r; y = c} else ()) map;
+  Aoc_2024.Common.iter_2d_f (fun r c x -> if x = '@' then now_at := {x = c; y = r} else ()) map;
 
   let rec process = function | '<' -> ignore (try_move !now_at ( 0, -1));
                              | '>' -> ignore (try_move !now_at ( 0,  1));

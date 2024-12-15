@@ -42,3 +42,6 @@
 
 (executable
  (public_name dec15) (name dec15) (modules dec15) (libraries aoc_2024))
+
+(executable
+ (public_name dec15_pt2) (name dec15_pt2) (modules dec15_pt2) (libraries aoc_2024))
