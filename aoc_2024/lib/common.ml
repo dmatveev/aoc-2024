@@ -30,6 +30,15 @@ let iter_2d f m =
 
 let iter_2d_f f m = iter_2d (fun r c -> f r c m.(r).(c)) m
 
+let print_mat m =
+  let (rows, cols) = size_of_mat m in
+  for r = 0 to rows - 1 do
+    for c = 0 to cols - 1 do
+      print_char m.(r).(c)
+    done;
+    print_newline ();
+  done
+
 let loop_2d f (r_max, c_max) =
   for r = 0 to r_max - 1 do
     for c = 0 to c_max - 1 do f r c done
